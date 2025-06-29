@@ -1,0 +1,55 @@
+﻿@model List<GuitarStore.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Cart";
+    var total = Model.Sum(item => item.Price * item.Quantity);
+}
+
+<h2>Shopping Cart</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">Your cart is empty.</div>
+}
+else
+{
+    <table class="table table-bordered align-middle text-center">
+        <thead class="table-light">
+            <tr>
+                <th>Image</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width: 100px;">
+                        <img src="@item.ImageUrl" alt="@item.Brand" style="height: 60px; object-fit: contain;" />
+                    </td>
+                    <td>@item.Brand</td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>
+                        @item.Quantity
+                        <a asp-controller="Cart" asp-action="Increase" asp-route-id="@item.GuitarID" class="btn btn-sm btn-outline-success ms-1">↑</a>
+                        <a asp-controller="Cart" asp-action="Decrease" asp-route-id="@item.GuitarID" class="btn btn-sm btn-outline-warning ms-1">↓</a>
+                    </td>
+                    <td>@(item.Quantity* item.Price).ToString("C")</td>
+                    <td>
+                        <a asp-controller="Cart" asp-action="Remove" asp-route-id="@item.GuitarID" class="btn btn-sm btn-danger">Remove</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr class="table-info">
+                <td colspan="4" class="text-end"><strong>Grand Total:</strong></td>
+                <td colspan="2"><strong>@total.ToString("C")</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+}
