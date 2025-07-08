@@ -33,5 +33,12 @@ namespace GuitarStore.Controllers
 
             return View(await guitars.ToListAsync());
         }
+        public async Task<IActionResult> ImageOnly(int id)
+        {
+            var guitar = await _context.Guitars.FindAsync(id);
+            if (guitar == null) return NotFound();
+            return View(guitar);
+        }
+
     }
 }

@@ -38,7 +38,7 @@ else
                         <a asp-controller="Cart" asp-action="Increase" asp-route-id="@item.GuitarID" class="btn btn-sm btn-outline-success ms-1">↑</a>
                         <a asp-controller="Cart" asp-action="Decrease" asp-route-id="@item.GuitarID" class="btn btn-sm btn-outline-warning ms-1">↓</a>
                     </td>
-                    <td>@(item.Quantity* item.Price).ToString("C")</td>
+                    <td>@((item.Quantity * item.Price).ToString("C"))</td>
                     <td>
                         <a asp-controller="Cart" asp-action="Remove" asp-route-id="@item.GuitarID" class="btn btn-sm btn-danger">Remove</a>
                     </td>

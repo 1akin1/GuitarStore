@@ -44,10 +44,10 @@ namespace GuitarStore.Data
                 new Guitar
                 {
                     GuitarID = 1,
-                    Brand = "Fender",
+                    Brand = "Fender Jazzmaster",
                     Price = 899.99m,
                     CategoryID = 1,
-                    ImageUrl = "https://commons.wikimedia.org/wiki/Category:Fender_Stratocaster#/media/File:Fender_Highway_1_Stratocaster.jpg"
+                    ImageUrl = "/images/jazzmaster.jpg"
                 }
             );
             

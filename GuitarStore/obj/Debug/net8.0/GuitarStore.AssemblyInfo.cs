@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GuitarStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00ec76f297d444052e9ad250421de2aaec01585e")]
 [assembly: System.Reflection.AssemblyProductAttribute("GuitarStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GuitarStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -169,3 +169,4 @@ C:\Users\Zihni\source\repos\GuitarStore\GuitarStore\obj\Debug\net8.0\refint\Guit
 C:\Users\Zihni\source\repos\GuitarStore\GuitarStore\obj\Debug\net8.0\GuitarStore.pdb
 C:\Users\Zihni\source\repos\GuitarStore\GuitarStore\obj\Debug\net8.0\GuitarStore.genruntimeconfig.cache
 C:\Users\Zihni\source\repos\GuitarStore\GuitarStore\obj\Debug\net8.0\ref\GuitarStore.dll
+C:\Users\Zihni\source\repos\GuitarStore\GuitarStore\obj\Debug\net8.0\GuitarStore.sourcelink.json
