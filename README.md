@@ -63,31 +63,53 @@ An admin account is automatically created on first run:
 
 ## Project Structure
 
+```
 GuitarStore/
+│
 ├── Controllers/
-│   ├── AccountController.cs    # Login, register, logout
-│   ├── AdminController.cs      # Admin panel (add/edit/delete guitars)
-│   ├── CartController.cs       # Cart management
-│   ├── CatalogController.cs    # Guitar catalog with filtering
-│   └── HomeController.cs       # Home page
+│   ├── AccountController.cs       # Login, register, logout
+│   ├── AdminController.cs         # Admin panel (add/edit/delete guitars)
+│   ├── CartController.cs          # Cart management
+│   ├── CatalogController.cs       # Guitar catalog with filtering
+│   └── HomeController.cs          # Home page
+│
 ├── Data/
-│   └── GuitarContext.cs        # EF Core DbContext with seed data
+│   └── GuitarContext.cs           # EF Core DbContext with seed data
+│
 ├── Models/
-│   ├── AccountViewModels.cs    # Login and register view models
-│   ├── CartItem.cs
-│   ├── Category.cs
-│   ├── Guitar.cs
-│   ├── Order.cs
-│   └── OrderedItem.cs
+│   ├── AccountViewModels.cs       # Login and register view models
+│   ├── CartItem.cs                # Cart item model
+│   ├── Category.cs                # Guitar category model
+│   ├── Guitar.cs                  # Guitar model
+│   ├── Order.cs                   # Order model
+│   └── OrderedItem.cs             # Order line item model
+│
 ├── Views/
-│   ├── Account/                # Login, Register, AccessDenied
-│   ├── Admin/                  # Admin panel, Add/Edit guitar
-│   ├── Cart/                   # Cart, Checkout
-│   ├── Catalog/                # Guitar catalog
-│   ├── Home/                   # Home page
-│   └── Shared/                 # Layout
-└── Extensions/
-└── SessionExtensions.cs    # Session helpers for cart
+│   ├── Account/
+│   │   ├── Login.cshtml
+│   │   ├── Register.cshtml
+│   │   └── AccessDenied.cshtml
+│   ├── Admin/
+│   │   ├── Index.cshtml           # Guitar management table
+│   │   ├── AddGuitar.cshtml
+│   │   └── EditGuitar.cshtml
+│   ├── Cart/
+│   │   ├── Index.cshtml
+│   │   └── Checkout.cshtml
+│   ├── Catalog/
+│   │   └── Index.cshtml           # Main shop page
+│   ├── Home/
+│   │   └── Index.cshtml           # Landing page
+│   └── Shared/
+│       └── _Layout.cshtml         # Global layout with navbar
+│
+├── Extensions/
+│   └── SessionExtensions.cs       # Session helpers for cart serialization
+│
+├── Program.cs                     # App configuration and startup
+└── guitarstore.db                 # SQLite database file (auto-generated)
+```
+
 
 ## Screenshots
 <img width="1885" height="942" alt="0" src="https://github.com/user-attachments/assets/ddde368d-0367-4d6e-bfed-a40a3eba8c3a" />
