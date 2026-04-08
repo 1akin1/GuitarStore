@@ -1,0 +1,25 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+
+# SQLite database
+*.db
+*.db-shm
+*.db-wal
+
+# ASP.NET Core
+appsettings.Development.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Rider / JetBrains
+.idea/
+
+# NuGet
+*.nupkg

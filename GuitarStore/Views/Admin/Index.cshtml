@@ -1,0 +1,51 @@
+@model List<GuitarStore.Models.Guitar>
+    @{
+    ViewData["Title"] = "Admin Panel";
+    }
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Admin Panel</h2>
+        <a asp-action="AddGuitar" class="btn btn-success">+ Add Guitar</a>
+    </div>
+
+    @if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Image</th>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var guitar in Model)
+        {
+            <tr>
+                <td style="width:80px;">
+                    <img src="@guitar.ImageUrl" alt="@guitar.Brand" style="height:50px; object-fit:contain;" />
+                </td>
+                <td>@guitar.Brand</td>
+                <td>@guitar.Category?.Type</td>
+                <td>@guitar.Price.ToString("C")</td>
+                <td>
+                    <a asp-action="EditGuitar" asp-route-id="@guitar.GuitarID" class="btn btn-sm btn-warning">Edit</a>
+                    <form asp-action="DeleteGuitar" method="post" class="d-inline"
+                          onsubmit="return confirm('Are you sure you want to delete @guitar.Brand?')">
+                        <input type="hidden" name="id" value="@guitar.GuitarID" />
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+

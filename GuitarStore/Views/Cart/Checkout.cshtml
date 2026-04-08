@@ -1,0 +1,57 @@
+@model List<GuitarStore.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Checkout";
+    var total = Model.Sum(item => item.Price * item.Quantity);
+}
+
+<h2 class="mb-4">Checkout</h2>
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="card mb-4">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0">Shipping Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" placeholder="John Doe" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" placeholder="john@example.com" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Shipping Address</label>
+                    <textarea class="form-control" rows="3" placeholder="123 Main St, City, Country"></textarea>
+                </div>
+                <div class="alert alert-info">
+                    <strong>Note:</strong> This is a demo checkout. No real orders are processed.
+                </div>
+                <button class="btn btn-success w-100" disabled>Place Order (Demo)</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0">Order Summary</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                @foreach (var item in Model)
+                {
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>@item.Brand × @item.Quantity</span>
+                        <span>@((item.Price * item.Quantity).ToString("C"))</span>
+                    </li>
+                }
+                <li class="list-group-item d-flex justify-content-between fw-bold fs-5 bg-light">
+                    <span>Total</span>
+                    <span>@total.ToString("C")</span>
+                </li>
+            </ul>
+        </div>
+        <a asp-controller="Cart" asp-action="Index" class="btn btn-outline-secondary w-100 mt-3">← Back to Cart</a>
+    </div>
+</div>

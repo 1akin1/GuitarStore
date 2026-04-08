@@ -1,0 +1,59 @@
+@model GuitarStore.Models.Guitar
+@{
+    ViewData["Title"] = "Add Guitar";
+    var brands = new List<string> { "Fender", "Gibson", "Martin", "Taylor", "Yamaha", "Ibanez", "PRS", "ESP", "Gretsch", "Epiphone", "Schecter", "Seagull", "Takamine", "Cordoba", "Kremona", "Alhambra", "Jackson", "Dean", "Washburn", "Cort" };
+}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+        <div class="card border-0 shadow-lg">
+            <div class="card-header bg-dark text-white py-3">
+                <h4 class="mb-0 fw-semibold">Add New Guitar</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="post" asp-action="AddGuitar">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Brand</label>
+                        <select name="Brand" class="form-select">
+                            <option value="">-- Select Brand --</option>
+                            @foreach (var brand in brands)
+                            {
+                                <option value="@brand">@brand</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Description</label>
+                        <textarea name="Description" class="form-control" rows="3" placeholder="Describe the guitar model, features, tone..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Price</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input name="Price" class="form-control" type="number" step="0.01" min="0" placeholder="0.00" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Category</label>
+                        <select name="CategoryID" class="form-select">
+                            <option value="">-- Select Category --</option>
+                            @foreach (var cat in ViewBag.Categories)
+                            {
+                                <option value="@cat.Value">@cat.Text</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Image URL</label>
+                        <input name="ImageUrl" class="form-control" placeholder="https://..." />
+                        <div class="form-text">Paste a direct link to the guitar image.</div>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-dark px-4">Add Guitar</button>
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
