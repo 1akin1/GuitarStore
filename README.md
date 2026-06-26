@@ -4,15 +4,14 @@ A full-stack ASP.NET Core MVC e-commerce web application for browsing and purcha
 
 ## Screenshots
 <img width="1885" height="942" alt="0" src="https://github.com/user-attachments/assets/ddde368d-0367-4d6e-bfed-a40a3eba8c3a" />
-<img width="1340" height="391" alt="1" src="https://github.com/user-attachments/assets/4ef1b987-e722-4518-85da-7de9c2ada34d" />
-<img width="1366" height="441" alt="4" src="https://github.com/user-attachments/assets/82e573cd-79cf-4d00-9f80-a0db7d2bae2b" />
-
 
 ## Features
 
 - **Guitar Catalog** — Browse 20 guitars across Electric, Acoustic, and Classical categories
+ <img width="1340" height="391" alt="1" src="https://github.com/user-attachments/assets/4ef1b987-e722-4518-85da-7de9c2ada34d" />
 - **Filtering** — Filter by brand, category, and price range
 - **Shopping Cart** — Add, remove, and adjust quantities with session-based cart
+- <img width="1366" height="441" alt="4" src="https://github.com/user-attachments/assets/82e573cd-79cf-4d00-9f80-a0db7d2bae2b" />
 - **User Authentication** — Register and login with ASP.NET Core Identity
 - **Role-Based Access** — Admin and Customer roles
 - **Admin Panel** — Add, edit, delete guitars and manage prices (Admin only)
