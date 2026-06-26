@@ -2,7 +2,6 @@
 
 A full-stack ASP.NET Core MVC e-commerce web application for browsing and purchasing guitars online.
 
-## Screenshots
 <img width="1885" height="942" alt="0" src="https://github.com/user-attachments/assets/ddde368d-0367-4d6e-bfed-a40a3eba8c3a" />
 
 ## Features
